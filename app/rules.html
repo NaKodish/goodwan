@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="utf-8">
+    <!-- <base href="/"> -->
+
+    <title></title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Custom Browsers Color Start -->
+    <meta name="theme-color" content="#000">
+    <!-- Custom Browsers Color End -->
+
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href=""><img src="img/logo.png" alt=""></a>
+        </div>
+        <div class="user_name">
+            <p>Ольга Глухарёва</p>
+        </div>
+    </header>
+    <a class="toggle">
+        <span></span>
+    </a>
+    <nav id="main-nav">
+        <ul class="second-nav">
+            <li>
+                <a href=""><img src="img/icon1.png" alt=""> Панели</a>
+
+            </li>
+            <li>
+                <a href="#"><img src="img/icon2.png" alt=""> Приложения</a>
+            </li>
+            <li>
+                <a href="#"><img src="img/icon3.png" alt=""> Операции</a>
+                <ul>
+                    <li>
+                        <a href="#"><img src="img/icon3_1.png" alt=""> Статистика</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icon3_2.png" alt=""> Базовые станции</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icon3_3.png" alt=""> Устройства</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icon3_4.png" alt=""> События</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icon3_5.png" alt=""> Пользователи</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="collections">
+                <a href="#"><img src="img/icon4.png" alt=""> Разработка</a>
+                <ul>
+                    <li>
+                        <a href="#"><img src="img/icon4_1.png" alt="">Типы данных</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icon4_2.png" alt=""> Показатели</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icon4_3.png" alt=""> Расписания</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/icon4_4.png" alt=""> Профили</a>
+                    </li>
+                    <li>
+                        <a><img src="img/icon4_5.png" alt=""> Хуки</a>
+                        <ul>
+                            <li>
+                                <a href="#"><img src="img/icon4_5_1.png" alt=""> Правила</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="img/icon4_5_2.png" alt=""> Исполнители</a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="img/icon4_5_3.png" alt=""> Условия</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="main" id="main">
+        <div class="title">
+            <h1 class="title">Правила</h1>
+            <a href="/rules_edit.html">
+                <svg class="img-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.71 5.63006C21.1 6.02006 21.1 6.65006 20.71 7.04006L18.88 8.87006L15.13 5.12006L16.96 3.29006C17.35 2.90006 17.98 2.90006 18.37 3.29006L20.71 5.63006ZM3 21.0001V17.2501L14.06 6.19006L17.81 9.94006L6.75 21.0001H3Z" fill="#AAB7D4"/>
+                </svg>
+            </a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="name">Наименование</th>
+                    <th class="type">Исполнитель</th>
+                    <th class="status">Активно </th>
+                    <th>Описание</th>
+                    <th class="terms">Условие</th>
+                    <th class="location">Местоположение</th>
+                    <th class="basket">Действия</th>
+                    <th class="setting"><img src="img/setting.png" alt=""></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="name">Правило 1</td>
+                    <td class="type">http get test</td>
+                    <td class="status"><img src="img/arrow_activ.png" alt=""></td>
+                    <td>Датчики температуры нужны для того, чтобы проконтролировать температуру в помещении...</td>
+                    <td>Условие 1</td>
+                    <td>Саранск</td>
+                    <td class="basket">
+                        <a href="">
+                            <svg class="img-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 4H19V6H5V4H8.5L9.5 3H14.5L15.5 4ZM8 21C6.9 21 6 20.1 6 19V7H18V19C18 20.1 17.1 21 16 21H8Z" fill="#AAB7D4"/>
+                            </svg>
+                        </a>
+                    </td>
+                    <td class="setting"><a href="/rules_card.html"><button>Открыть</button></a></td>
+                </tr>
+                <tr>
+                    <td class="name">Правило 2</td>
+                    <td class="type">http get test</td>
+                    <td class="status"></td>
+                    <td>Датчики температуры нужны для того, чтобы проконтролировать температуру в помещении...</td>
+                    <td>Условие 2</td>
+                    <td>Саранск</td>
+                    <td class="basket">
+                        <a href="">
+                            <svg class="img-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 4H19V6H5V4H8.5L9.5 3H14.5L15.5 4ZM8 21C6.9 21 6 20.1 6 19V7H18V19C18 20.1 17.1 21 16 21H8Z" fill="#AAB7D4"/>
+                            </svg>
+                        </a>
+                    </td>
+                    <td class="setting"><a href="/rules_card.html"><button>Открыть</button></a></td>
+                </tr>
+                <tr>
+                    <td class="name">Правило 3</td>
+                    <td class="type">http get test</td>
+                    <td class="status"></td>
+                    <td>Датчики температуры нужны для того, чтобы проконтролировать температуру в помещении...</td>
+                    <td>Условие 3</td>
+                    <td>Саранск</td>
+                    <td class="basket">
+                        <a href="">
+                            <svg class="img-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 4H19V6H5V4H8.5L9.5 3H14.5L15.5 4ZM8 21C6.9 21 6 20.1 6 19V7H18V19C18 20.1 17.1 21 16 21H8Z" fill="#AAB7D4"/>
+                            </svg>
+                        </a>
+                    </td>
+                    <td class="setting"><a href="/rules_card.html"><button>Открыть</button></a></td>
+                </tr>
+                <tr>
+                    <td class="name">Правило 4</td>
+                    <td class="type">http get test</td>
+                    <td class="status"></td>
+                    <td>Датчики температуры нужны для того, чтобы проконтролировать температуру в помещении...</td>
+                    <td>Условие 4</td>
+                    <td>Саранск</td>
+                    <td class="basket">
+                        <a href="">
+                            <svg class="img-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 4H19V6H5V4H8.5L9.5 3H14.5L15.5 4ZM8 21C6.9 21 6 20.1 6 19V7H18V19C18 20.1 17.1 21 16 21H8Z" fill="#AAB7D4"/>
+                            </svg>
+                        </a>
+                    </td>
+                    <td class="setting"><a href="/rules_card.html"><button>Открыть</button></a></td>
+                </tr>
+                <tr>
+                    <td class="name">Правило 5</td>
+                    <td class="type">http get test</td>
+                    <td class="status"></td>
+                    <td>Датчики температуры нужны для того, чтобы проконтролировать температуру в помещении...</td>
+                    <td>Условие 5</td>
+                    <td>Саранск</td>
+                    <td class="basket">
+                        <a href="">
+                            <svg class="img-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 4H19V6H5V4H8.5L9.5 3H14.5L15.5 4ZM8 21C6.9 21 6 20.1 6 19V7H18V19C18 20.1 17.1 21 16 21H8Z" fill="#AAB7D4"/>
+                            </svg>
+                        </a>
+                    </td>
+                    <td class="setting"><a href="/rules_card.html"><button>Открыть</button></a></td>
+                </tr>
+                <tr>
+                    <td class="name">Правило 6</td>
+                    <td class="type">http get test</td>
+                    <td class="status"></td>
+                    <td>Датчики температуры нужны для того, чтобы проконтролировать температуру в помещении...</td>
+                    <td>Условие 6</td>
+                    <td>Саранск</td>
+                    <td class="basket">
+                        <a href="">
+                            <svg class="img-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 4H19V6H5V4H8.5L9.5 3H14.5L15.5 4ZM8 21C6.9 21 6 20.1 6 19V7H18V19C18 20.1 17.1 21 16 21H8Z" fill="#AAB7D4"/>
+                            </svg>
+                        </a>
+                    </td>
+                    <td class="setting"><a href="/rules_card.html"><button>Открыть</button></a></td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="page">
+            <li>
+                <a href=""> <svg class="img-svg-arrow" width="18" height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.75 7.91289L0.768295 4.5L4.75 1.08711V7.91289Z" stroke="#979797"/>
+                    <path d="M5.5 4.5H17.5" stroke="#979797" stroke-linecap="square"/>
+                    </svg></a>
+            </li>
+            <li><a href="">1</a></li>
+            <li class="active"><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li>
+                <a href=""><svg  class="img-svg-arrow"  width="18" height="9" viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.25 1.08711L17.2317 4.5L13.25 7.91289L13.25 1.08711Z" stroke="#979797"/>
+<path d="M12.5 4.5L0.5 4.5" stroke="#979797" stroke-linecap="square"/>
+</svg></a>
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/scripts.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,912 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: #000000
+	background-color: #F4F8FF
+	min-height: 100vh
+	height: 100vh
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+::-webkit-scrollbar 
+	width: 5px
+	height: 5px
+::-webkit-scrollbar-button
+	background-color: #fff
+::-webkit-scrollbar-track
+	background-color: #fff
+::-webkit-scrollbar-track-piece
+	background-color: #ffffff
+::-webkit-scrollbar-thumb
+	max-height: 50px!important
+	background-color: $grey-text
+	border-radius: 3px
+::-webkit-scrollbar-corner
+	background-color: #fff
+::-webkit-resizer
+	background-color: #ffffff
+h1, h2, h3, h4, h5, h6, p 
+	margin: 0
+	padding: 0
+a, a:hover, a:focus 
+	text-decoration: none
+textarea 
+	resize: none
+header 
+	background-color: #ffffff
+	position: fixed 
+	top: 0
+	left: 0
+	width: 100%
+	display: flex
+	align-items: center
+	justify-content: space-between
+	z-index: 100
+	border-bottom: 1px solid $grey-border
+	.logo 
+		width: 170px
+		height: auto 
+		margin-left: 24px
+		img 
+			width: 100%
+			height: auto
+	.user_name
+		border-left: 1px solid $grey-border
+		padding: 23px 29px
+		p 
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 400
+			font-size: 15px
+			line-height: 1.6
+			color: $grey-text
+.left-sidebar
+	position: fixed 
+	top: 0px
+	left: 0
+	height: 100vh
+	padding-top: 80px
+	background-color: #ffffff
+	border-right: 1px solid $grey-border
+.hc-nav-trigger	
+	position: fixed 
+	z-index: 99	
+	top: 110px
+	left: 31px
+	span, span::after, span::before		
+		background: #696969
+		width: 18px
+		height: 2px
+	span
+		top: 0
+	span::after
+		top: -6px
+	span::before
+		top: 6px
+.hc-nav-trigger.toggle-open
+	span::after
+		background: $accent
+		top: 8px
+	span::before
+		background: $accent
+		top: 6px
+		top: -12px
+.hc-offcanvas-nav 
+	position: fixed 
+	z-index: 98
+	::-webkit-scrollbar 
+		width: 3px
+		height: 3px
+	::-webkit-scrollbar-button
+		background-color: #fff
+	::-webkit-scrollbar-track
+		background-color: #fff
+	::-webkit-scrollbar-track-piece
+		background-color: #ffffff
+	::-webkit-scrollbar-thumb
+		max-height: 50px!important
+		background-color: $grey-border
+		border-radius: 3px
+	::-webkit-scrollbar-corner
+		background-color: #fff
+	::-webkit-resizer
+		background-color: #ffffff
+	.nav-container
+		top: 70px
+		transform: translate3d(-195px,0,0)!important
+		padding-top: 75px
+		padding-bottom: 55px
+		width: 275px
+		height: calc(100vh - 70px)
+		background-color: #ffffff
+		border-right: 1px solid $grey-border
+		.nav-wrapper
+			background-color: #ffffff
+		a
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 400
+			font-size: 0px
+			line-height: 1.2
+			color: $dark-grey-text
+			padding: 0px 28px!important
+			margin-bottom: 28px
+			vertical-align: middle
+			border: none
+			text-align: right
+			img 
+				width: 24px
+				height: auto
+				margin-right: 0px
+				vertical-align: middle
+			span.nav-next
+				border: none!important
+				display: none
+			span.nav-next::before
+				top: 16px!important
+				transform: translate(-50%,-50%) rotate(90deg)!important
+				margin-top: 0!important
+				width: 12px
+				height: 8px
+				border-bottom:  6px solid transparent 
+				border-right:  8px solid transparent 
+				border-top:  6px solid transparent 
+				border-left: 8px solid #BBBBBB
+		li:hover
+			border: none
+			background: #ffffff!important
+			a 
+				background: #ffffff!important
+				border: none!important
+		li.nav-back, li.nav-close
+			position: absolute
+			bottom: 0
+			left: 0
+			z-index: 99
+			width: 100%
+			a
+				border: none
+				background: #ffffff!important
+				span 
+					display: none
+		li.level-open 
+			border: none
+			background: #ffffff!important
+			a 
+				background: #ffffff!important
+				border: none!important
+				color: $dark-grey-text
+				span.nav-next::before
+					transform: translate(-50%,-50%) rotate(270deg)!important
+					margin-top: -10px!important
+					width: 12px
+					height: 8px
+					border-bottom:  6px solid transparent 
+					border-right:  8px solid transparent 
+					border-top:  6px solid transparent 
+					border-left: 8px solid #3974CC
+			ul 
+				li 
+					a 
+						color: $dark-grey-text
+						background: transparent!important
+						span.nav-next::before
+							top: 16px!important
+							transform: translate(-50%,-50%) rotate(90deg)!important
+							margin-top: 0!important
+							width: 12px
+							height: 8px
+							border-bottom:  6px solid transparent 
+							border-right:  8px solid transparent 
+							border-top:  6px solid transparent 
+							border-left: 8px solid #BBBBBB
+				li.level-open
+					span.nav-next::before
+						transform: translate(-50%,-50%) rotate(270deg)!important
+						margin-top: -10px!important
+						width: 12px
+						height: 8px
+						border-bottom:  6px solid transparent 
+						border-right:  8px solid transparent 
+						border-top:  6px solid transparent 
+						border-left: 8px solid #3974CC
+.hc-offcanvas-nav.nav-open
+	.nav-container
+		width: auto
+		transform: translate3d(0,0,0)!important
+		box-shadow: 6px 4px 9px rgba(0, 0, 0, 0.04)
+		.nav-wrapper
+			box-shadow: none!important
+		a 
+			font-size: 15px
+			text-align: left
+			img 
+				margin-right: 12px
+			span.nav-next
+				display: block
+#main
+	z-index: 97
+	padding-top: 100px
+	padding-left: 145px
+	padding-right: 110px
+.img-svg:hover, .img-svg.active
+	path 
+		fill: $accent
+.img-svg-red:hover, .img-svg-red.active
+	path 
+		fill: $accent-red
+a:hover 
+	.img-svg-arrow
+		path 
+			stroke: $accent
+			fill: $accent
+	.img-svg
+		path 
+			fill: $accent
+.title 
+	display: flex
+	align-items: center
+	justify-content: space-between
+	svg
+		width: 24px
+		height: auto
+	a 
+		font-family: Montserrat
+		font-style: normal
+		font-weight: 400
+		font-size: 14px
+		line-height: 1.6
+		color: #555555
+	.left, .right 
+		display: flex
+		align-items: flex-end
+	.left 
+		a 
+			margin-right: 16px
+	.right 
+		a
+			margin-left: 24px
+.card 
+	margin-top: 20px
+	margin-bottom: 30px
+	background: #FFFFFF
+	box-shadow: -11px 9px 21px rgba(173, 182, 217, 0.170884)
+	border-radius: 4px
+	padding: 30px 32px
+.form_card
+	width: 50%
+	label 
+		width: 25%
+		display: inline-block
+		vertical-align: middle
+		margin: 0
+		text-align: left
+		font-family: Montserrat
+		font-style: normal
+		font-weight: 400
+		font-size: 15px
+		line-height: 1.2
+		color: #A4A4A4
+		padding: 8px 0px
+		margin-bottom: 22px
+	input, select, textarea, input:disabled, textarea:disabled, a.choice
+		width: 74%
+		display: inline-block
+		vertical-align: middle
+		margin: 0
+		font-family: Montserrat
+		font-style: normal
+		font-weight: 400
+		font-size: 15px
+		line-height: 1.2
+		color: #555555
+		background-color: #ffffff
+		border: 1px solid transparent
+		border-radius: 2px
+		padding: 8px 20px
+		margin-bottom: 22px
+	select
+		padding: 8px 15px
+		appearance: none
+	a.choice
+		padding: 5px 16px
+		svg 
+			width: 24px
+			height: auto 
+			margin-bottom: 0
+			vertical-align: middle
+	#chek
+		input
+			display: none
+		label
+			position: relative
+		label:after
+			content: ''
+			display: inline-block
+			position: absolute
+			right: -42px
+			text-align: center
+			text-indent: 0px
+			width: 20px
+			height: 20px
+			background: #FFF
+			border: 2px solid #C1C3C6
+			border-radius: 2px
+			border-image: initial
+			vertical-align: middle
+			color: #C1C3C6
+			font-size: 14px
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 700
+		//Исправить активность галочки
+		input:disabled + label:after
+			content: ''
+		input:checked+label:after
+			content: '\2714'
+	textarea, textarea:disabled
+		width: 100%
+		height: auto
+		padding: 0
+		margin-top: -12px
+	.one-parameter
+		width: 100%
+		display: flex
+		align-items: flex-end
+		justify-content: flex-start
+		margin-bottom: 22px
+		.value-parameter, .parameter
+			width: 40%
+			margin-right: 5%
+			label 
+				width: 100%
+				margin-bottom: 10px
+			input 
+				width: 100%
+				margin-bottom: 0
+				padding-left: 0
+		.delete 
+			text-align: right
+			width: 10%
+	.added_parameter
+		display: flex
+		align-items: center
+		justify-content: space-between
+		label 
+			width: auto 
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 400
+			font-size: 15px
+			line-height: 0.5
+			color: $accent
+			border-bottom: 1px dashed $accent
+		svg 
+			width: 24px
+			height: auto
+	.param 
+		width: 74%
+		display: inline-block
+		vertical-align: top
+		input 
+			margin-bottom: 0px
+			width: 100%
+	.line 
+		margin-bottom: 22px
+.line 
+	width: 100%
+	height: 1px
+	background-color: #ECEDF4
+.form_card.card_edit 
+	input, select, textarea
+		border: 1px solid #B9C6E0
+	textarea 
+		height: 96px
+		padding: 12px 20px
+	#chek
+		label:after
+			right: -22px
+			color: $accent 
+			border: 2px solid $accent
+	a.choice.edit 
+		color: $accent 
+		border-bottom: 1px dashed $accent
+		width: auto
+		padding-left: 0
+		padding-right: 0
+	.one-parameter
+		.value-parameter, .parameter
+			input
+				padding-left: 20px
+table.form_card.card_edit 
+	input, textarea, select
+		width: 90%
+		margin: 0
+		height: auto
+	a.choice.edit
+		width: auto 
+		margin: 0
+		display: inline-block
+h1
+	font-family: Montserrat
+	font-style: normal
+	font-weight: 700
+	font-size: 22px
+	line-height: 1.1
+	color: $accent
+	position: relative
+	width: auto
+	display: inline-block
+	vertical-align: middle
+h1.title:after 
+	content: ''
+	display: inline-block
+	vertical-align: middle
+	position: relative
+	right: 0
+	top: 0
+	width: 48px
+	height: 48px
+	margin-left: 14px
+	background-image: url('../img/plus.png')
+	background-position: center 
+	background-size: contain
+	background-repeat: no-repeat
+button 
+	font-family: Montserrat
+	font-style: normal
+	font-weight: 400
+	font-size: 15px
+	line-height: 1.333
+	text-align: center
+	color: $dark-grey-text
+	padding: 9px 15px 
+	border: 1px solid #C1C2C4
+	border-radius: 2px
+	background: transparent
+	cursor: pointer
+button:hover, button.blue
+	font-family: Montserrat
+	font-style: normal
+	font-weight: 400
+	font-size: 15px
+	line-height: 1.333
+	text-align: center
+	color: #ffffff
+	padding: 9px 15px 
+	border: 1px solid $accent
+	border-radius: 2px
+	background: $accent
+	cursor: pointer
+table 
+	width: 100%
+	margin-top: 10px
+	border-collapse: separate
+	border-spacing: 0px 10px
+	.name 
+		width: 14%
+	.type
+		width: 9%
+	.location
+		width: 9%
+	.terms 
+		width: 9%
+	.status
+		width: 7.5%
+	.basket
+		width: 7.5%
+	.setting
+		width: 14%
+	.device
+		width: 50%
+	.name, .terms 
+		text-align: left
+	.setting, .basket
+		text-align: right
+	thead 
+		th 
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 700
+			font-size: 13px
+			line-height: 1.54
+			color: #B0B8CC
+			padding: 3px 0px
+			img 
+				width: 24px
+				height: auto
+	tbody 
+		tr 
+			box-shadow: 0px 2px 4px #DBE4F9
+			border-radius: 2px
+		td 
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 400
+			font-size: 15px
+			line-height: 1.333
+			color: #555555
+			padding: 31px 0px
+			background-color: #ffffff
+			a 
+				color: #555555
+			img 
+				width: 24px
+				height: auto
+	th:first-child, td:first-child
+		padding-left: 30px
+	td:last-child
+		padding-right: 30px
+	.basket
+		svg 
+			margin-left: 10px
+	tr.edit 
+		td 
+			padding-bottom: 110px
+			position: relative
+	tr.edit
+		td:after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 1px
+			left: 0px
+			bottom: 95px
+			background-color: #ECEDF4
+	.setting
+		position: relative
+		.rules_table_edit
+			position: absolute
+			bottom: 30px
+			right: 30px
+			width: 200%
+			a 
+				display: inline-block
+				margin-left: 20px
+	tbody
+		.profile
+			svg
+				opacity: 0
+		tr:hover
+			box-shadow: 0px 13px 23px rgba(8, 81, 191, 0.25)
+			td:first-child
+				position: relative
+			td:first-child:before 
+				content: '\2022'
+				position: absolute 
+				color: $accent-red 
+				font-size: 50px
+				top: 15%
+				left: -30px
+			button 
+				color: #ffffff
+				background-color: $accent 
+				border: 1px solid $accent
+			.event 
+				color: $accent-red
+			.img-svg-red 
+				path 
+					fill: $accent-red
+			.profile
+				svg
+					opacity: 1
+ul.menu-project		
+	li 
+		a 
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 400
+			font-size: 15px
+			line-height: 1.333
+			color: #555555
+ul.page 
+	width: 100%
+	padding: 0 6px
+	margin: 0
+	margin-top: 90px
+	border-top: 1px solid $grey-border
+	li 
+		display: inline-block
+		border-top: 1px solid transparent
+		margin-top: -1px
+		width: 45px
+		text-align: center
+		padding: 13px 0px
+		a
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 400
+			font-size: 12px
+			line-height: 1.25
+			color: #727373
+			opacity: 0.9
+			img 
+				width: 18px
+				height: auto
+	li.active
+		border-top: 1px solid $accent
+		a
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 700
+			font-size: 12px
+			line-height: 1.25
+			color: $accent
+.modal
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background: rgba(13,30,68,0.75)
+	z-index: 1050
+	opacity: 0
+	margin: 0
+	padding: 0
+.modal.show
+	opacity: 1
+	pointer-events: auto
+    overflow-y: auto
+	display: flex
+	align-items: center
+	justify-content: center
+	.modal-dialog
+		position: relative
+		margin: auto 
+		max-width: 100%
+		width: 50%
+		height: 85%
+		overflow: hidden
+		background-color: #E1ECFF
+		border-radius: 4px
+	.modal-content
+		height: 100%
+		width: 100%
+	.close
+		position: absolute
+		top: 18px
+		right: 32px
+		z-index: 1051
+		svg 
+			width: 32px
+			height: 32px
+.tabs
+	width: 100%
+	height: 100%
+	padding: 0px
+	position: relative
+	background-color: #E1ECFF
+	input.input_tabs 
+		display: none
+	section
+		display: none
+		width: calc(70% + 1px)
+		height: 100%
+		overflow: auto
+		position: absolute 
+		top: 0
+		right: 0
+		background: #fff
+		z-index: 1
+		border-left: 1px solid #B8D2FA
+		box-shadow: -2px 3px 3px rgba(123, 174, 202, 0.1)
+		.card 
+			border: none
+			margin: 0
+			height: 100%
+			padding: 16px 32px
+			button
+				margin-bottom: 15px
+	label.label_tabs
+		z-index: 2
+		display: block
+		width: 27%
+		margin-left: 3%
+		padding: 16px 40px
+		background: transparent
+		box-shadow: none
+		border-radius: 4px 0px 0px 4px
+		font-family: Montserrat
+		font-style: normal
+		font-weight: 400
+		font-size: 14px
+		color: #686868
+		margin-bottom: 0
+		position: relative
+	label.label_tabs:before 
+		position: absolute
+		left: 10px
+		content: ''
+		width: 20px
+		height: 20px
+		border: 2px solid #979797
+		color: $accent
+		border-radius: 50%
+		overflow: hidden
+		line-height: 1px
+		font-size: 20px
+		display: flex
+		align-items: center
+		justify-content: center
+	label.label_tabs:nth-child(2)
+		margin-top: 20px
+	input:checked+label.label_tabs
+		background: #FFFFFF
+		box-shadow: -2px 3px 3px rgba(123, 174, 202, 0.1)
+		border-radius: 4px 0px 0px 4px
+		border: 1px solid #B8D2FA
+		border-right: none
+	input:checked+label.label_tabs:before 
+		content: '\25CF'
+		border: 2px solid $accent 
+	#tab1:checked~#content-tab1, #tab2:checked~#content-tab2, #tab3:checked~#content-tab3, #tab4:checked~#content-tab4
+		display: inline-block
+.w100 
+	width: 100%
+#map 
+	margin-top: 20px
+	margin-bottom: 30px
+	width: 100%
+	height: 78vh
+	position: relative
+	iframe 
+		position: absolute 
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+.tabs_2
+	margin-top: 20px
+	width: 100%
+	height: 100%
+	padding: 0px
+	position: relative
+	border-radius: 0px 4px 4px 4px
+	input.input_tabs 
+		display: none
+	section
+		position: relative
+		display: none
+		width: 100%
+		height: 78vh
+		overflow: auto
+		background: #fff
+		z-index: 2
+		margin-top: -3px
+		box-shadow: -11px 9px 21px rgba(173, 182, 217, 0.170884)
+		.card 
+			border: none
+			box-shadow: none
+			margin: 0
+			height: 100%
+			padding: 0
+			flex-direction: row
+			.form_card
+				padding: 20px 30px
+				width: 40%
+				height: 100%
+				overflow: auto
+			#map 
+				margin: 0
+				width: 60%
+				height: 100%
+	label.label_tabs
+		z-index: 1
+		position: relative
+		display: inline-block
+		width: auto
+		padding: 12px 50px
+		background: transparent
+		box-shadow: none
+		border-radius: 4px 4px 0px 0px
+		font-family: Montserrat
+		font-style: normal
+		font-weight: 400
+		font-size: 14px
+		color: #686868
+		margin-bottom: 0
+		position: relative
+		span 
+			color: #ffffff
+			background-color: $accent-red 
+			width: 20px
+			height: 20px
+			overflow: hidden
+			border-radius: 50%
+			position: absolute
+			display: flex
+			align-items: center
+			justify-content: center
+			top: 25%
+			right: 40px
+	label.label_span
+		padding: 12px 70px 12px 50px
+	input:checked+label.label_tabs
+		background: #FFFFFF
+		box-shadow: -11px 9px 21px rgba(173, 182, 217, 0.170884)
+		border-radius: 4px 4px 0px 0px
+		border-right: none
+	#tab1:checked~#content-tab1, #tab2:checked~#content-tab2
+		display: inline-block
+.table_event 
+	padding: 20px 30px
+	.date 
+		display: flex
+		align-items: center
+		margin-bottom: 22px
+		p 	
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 400
+			font-size: 14px
+			line-height: 1.2
+			color: #A4A4A4
+			margin-right: 16px
+		input 	
+			font-family: Montserrat
+			font-style: normal
+			font-weight: 400
+			font-size: 15px
+			line-height: 1.2
+			color: #555555
+			background-color: #ffffff
+			border: 1px solid #B9C6E0
+			border-radius: 2px
+			padding: 8px 20px
+			width: 200px
+			appearance: none
+		.input
+			position: relative
+			margin-right: 32px
+		.input:after
+			content: ''
+			position: absolute 
+			width: 24px
+			height: 24px
+			right: 12px
+			top: calc(50% - 12px)
+			background-image: url('../img/calendar.png')
+			background-position: center 
+			background-size: contain
+			background-repeat: no-repeat
+		input::-webkit-inner-spin-button, input::-webkit-calendar-picker-indicator 
+			appearance: none
+			display: none
+	table 
+		margin-top: 18px
+		border-spacing: 0
+		thead 
+			th 
+				padding-bottom: 10px
+		td:first-child(1)
+			color: #3D57AA
+		tr:nth-child(1), tr:nth-child(2), tr:nth-child(3)
+			td
+				background: rgba(8, 191, 92, 0.1)
+		tr, tr:hover
+			box-shadow: none 
+			td
+				border-bottom: 1px solid rgba(209, 216, 245, 0.6)
+		tr:hover
+			td:last-child
+				color: $accent-red
+@import "media" // Always at the end
